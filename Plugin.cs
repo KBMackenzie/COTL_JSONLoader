@@ -22,8 +22,8 @@ public class Plugin : BaseUnityPlugin
         Logger.LogInfo($"Loaded {PluginName} successfully!");
     }
 
-    public static void Log(string x) => myLogger.LogInfo(x);
-    public static void LogError(string x) => myLogger.LogError(x);
+    internal static void Log(string x) => myLogger.LogInfo(x);
+    internal static void LogError(string x) => myLogger.LogError(x);
 
     public static void LoadFiles()
     {
