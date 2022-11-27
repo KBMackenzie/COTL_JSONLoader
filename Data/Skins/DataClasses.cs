@@ -2,6 +2,7 @@
 using System.Linq;
 using COTL_API.CustomSkins;
 using UnityEngine;
+using System.Collections.Generic;
 #pragma warning disable CS0649
 
 namespace COTL_JSONLoader.Data.Skins;
@@ -21,19 +22,19 @@ internal class FollowerSkinData
     public string name;
     public string imagePath;
     public OverrideData[] overrides;
-    public FollowerColor[] colorOverrides;
+    public List<HexColor[]> colors;
 
-    public FollowerSkinDummy CreateSkin() => new(name, imagePath, overrides, colorOverrides);
+    public FollowerSkinDummy CreateSkin() => new(name, imagePath, overrides, colors);
 }
 
-public class FollowerColor
-{
-    public HexColor[] colorOverrides;
-    public WorshipperData.SlotsAndColours CreateColors() => new()
-    {
-        SlotAndColours = colorOverrides.Select(x => x.CreateColor()).ToList()
-    };
-}
+//public class FollowerColor
+//{
+//    public HexColor[] colorOverrides;
+//    public WorshipperData.SlotsAndColours CreateColors() => new()
+//    {
+//        SlotAndColours = colorOverrides.Select(x => x.CreateColor()).ToList()
+//    };
+//}
 
 public class HexColor
 {

@@ -1,6 +1,7 @@
 ﻿using COTL_JSONLoader.Data.Skins;
 using System.IO;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace COTL_JSONLoader;
 
@@ -45,54 +46,45 @@ internal static class DebugLoad
                 new OverrideData("HEAD_SKIN_TOP", "111, 127, 149, 127"),
                 new OverrideData("HEAD_SKIN_BTM", "111, 0, 149, 127")
             },
-            colorOverrides = new FollowerColor[]
+            colors = new List<HexColor[]>
             {
-                new FollowerColor()
+                new HexColor[]
                 {
-                    colorOverrides = new HexColor[]
-                    {
-                        new HexColor("ARM_LEFT_SKIN", "#FF0000"),
-                        new HexColor("ARM_RIGHT_SKIN", "#FF0000"),
-                        new HexColor("LEG_LEFT_SKIN", "#FF0000"),
-                        new HexColor("LEG_RIGHT_SKIN", "#FF0000"),
-                        new HexColor("BODY_SKIN", "#FF0000"),
-                        new HexColor("BODY_SKIN_BOWED", "#FF0000"),
-                        new HexColor("BODY_SKIN_UP", "#FF0000"),
-                        new HexColor("HEAD_SKIN_BTM", "#FF0000"),
-                        new HexColor("HEAD_SKIN_TOP", "#FF7F00"),
-                    }
+                    new HexColor("ARM_LEFT_SKIN", "#FF0000"),
+                    new HexColor("ARM_RIGHT_SKIN", "#FF0000"),
+                    new HexColor("LEG_LEFT_SKIN", "#FF0000"),
+                    new HexColor("LEG_RIGHT_SKIN", "#FF0000"),
+                    new HexColor("BODY_SKIN", "#FF0000"),
+                    new HexColor("BODY_SKIN_BOWED", "#FF0000"),
+                    new HexColor("BODY_SKIN_UP", "#FF0000"),
+                    new HexColor("HEAD_SKIN_BTM", "#FF0000"),
+                    new HexColor("HEAD_SKIN_TOP", "#FF7F00"),
                 },
 
-                new FollowerColor()
+                new HexColor[]
                 {
-                    colorOverrides = new HexColor[]
-                    {
-                        new HexColor("ARM_LEFT_SKIN", "#00FF00"),
-                        new HexColor("ARM_RIGHT_SKIN", "#00FF00"),
-                        new HexColor("LEG_LEFT_SKIN", "#00FF00"),
-                        new HexColor("LEG_RIGHT_SKIN", "#00FF00"),
-                        new HexColor("BODY_SKIN", "#00FF00"),
-                        new HexColor("BODY_SKIN_BOWED", "#00FF00"),
-                        new HexColor("BODY_SKIN_UP", "#00FF00"),
-                        new HexColor("HEAD_SKIN_BTM", "#00FF00"),
-                        new HexColor("HEAD_SKIN_TOP", "#00FF7F"),
-                    }
+                    new HexColor("ARM_LEFT_SKIN", "#00FF00"),
+                    new HexColor("ARM_RIGHT_SKIN", "#00FF00"),
+                    new HexColor("LEG_LEFT_SKIN", "#00FF00"),
+                    new HexColor("LEG_RIGHT_SKIN", "#00FF00"),
+                    new HexColor("BODY_SKIN", "#00FF00"),
+                    new HexColor("BODY_SKIN_BOWED", "#00FF00"),
+                    new HexColor("BODY_SKIN_UP", "#00FF00"),
+                    new HexColor("HEAD_SKIN_BTM", "#00FF00"),
+                    new HexColor("HEAD_SKIN_TOP", "#00FF7F"),
                 },
 
-                new FollowerColor()
+                new HexColor[]
                 {
-                    colorOverrides = new HexColor[]
-                    {
-                        new HexColor("ARM_LEFT_SKIN", "#0000FF"),
-                        new HexColor("ARM_RIGHT_SKIN", "#0000FF"),
-                        new HexColor("LEG_LEFT_SKIN", "#0000FF"),
-                        new HexColor("LEG_RIGHT_SKIN", "#0000FF"),
-                        new HexColor("BODY_SKIN", "#0000FF"),
-                        new HexColor("BODY_SKIN_BOWED", "#0000FF"),
-                        new HexColor("BODY_SKIN_UP", "#0000FF"),
-                        new HexColor("HEAD_SKIN_BTM", "#0000FF"),
-                        new HexColor("HEAD_SKIN_TOP", "#7F00FF"),
-                    }
+                    new HexColor("ARM_LEFT_SKIN", "#0000FF"),
+                    new HexColor("ARM_RIGHT_SKIN", "#0000FF"),
+                    new HexColor("LEG_LEFT_SKIN", "#0000FF"),
+                    new HexColor("LEG_RIGHT_SKIN", "#0000FF"),
+                    new HexColor("BODY_SKIN", "#0000FF"),
+                    new HexColor("BODY_SKIN_BOWED", "#0000FF"),
+                    new HexColor("BODY_SKIN_UP", "#0000FF"),
+                    new HexColor("HEAD_SKIN_BTM", "#0000FF"),
+                    new HexColor("HEAD_SKIN_TOP", "#7F00FF"),
                 }
             }
         };

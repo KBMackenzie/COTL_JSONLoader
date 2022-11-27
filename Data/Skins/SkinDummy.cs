@@ -3,6 +3,7 @@ using COTL_API.CustomSkins;
 using COTL_JSONLoader.Helpers;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Drawing;
 #nullable enable
 
 namespace COTL_JSONLoader.Data.Skins;
@@ -36,18 +37,28 @@ internal class FollowerSkinDummy : CustomFollowerSkin
 {
     public string name, imagePath;
     public OverrideData[] overrideData;
-    public FollowerColor[]? colors;
+    public List<HexColor[]>? colors;
     public override string Name => name;
     public override Texture2D Texture => AssetHelpers.Load(imagePath);
     public override List<SkinOverride> Overrides => overrideData.Select(x => x.CreateOverride()).ToList();
-    public override List<WorshipperData.SlotsAndColours> Colors => colors?.Select(x => x.CreateColors())?.ToList() ?? base.Colors;
+    public override List<WorshipperData.SlotsAndColours> Colors => GenerateColors() ?? base.Colors;
 
     public FollowerSkinDummy(string name, string imagePath, OverrideData[] overrideData,
-        FollowerColor[]? colors = null)
+        List<HexColor[]>? colors = null)
     {
         this.name = name;
         this.imagePath = imagePath;
         this.overrideData = overrideData;
         this.colors = colors;
+    }
+
+    public List<WorshipperData.SlotsAndColours>? GenerateColors()
+    {
+        if (this.colors == null) return null;
+
+        return colors.Select(x => new WorshipperData.SlotsAndColours()
+        {
+            SlotAndColours = x.Select(x => x.CreateColor()).ToList()
+        }).ToList();
     }
 }
