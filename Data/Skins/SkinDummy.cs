@@ -54,11 +54,9 @@ internal class FollowerSkinDummy : CustomFollowerSkin
 
     public List<WorshipperData.SlotsAndColours>? GenerateColors()
     {
-        if (this.colors == null) return null;
-
-        return colors.Select(x => new WorshipperData.SlotsAndColours()
+        return colors?.Select(x => new WorshipperData.SlotsAndColours()
         {
             SlotAndColours = x.Select(y => y.CreateColor()).ToList()
-        }).ToList();
+        })?.ToList();
     }
 }
