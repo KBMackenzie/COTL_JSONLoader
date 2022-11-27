@@ -37,31 +37,31 @@ public class FollowerColor
 
 public class HexColor
 {
-    public string hexcode;
     public string overrideName;
+    public string hexcode;
     public Color GetColor() => AssetHelpers.HexToColor(hexcode);
     public WorshipperData.SlotAndColor Create() => new(overrideName, GetColor());
 }
 
 internal class OverrideData
 {
-    public string overrideName, imageArea;
-    public CustomSkin.SkinOverride Create() => new(overrideName, AssetHelpers.ToRect(imageArea));
-    public OverrideData(string overrideName, string imageArea)
+    public string overrideName, rect;
+    public CustomSkin.SkinOverride Create() => new(overrideName, AssetHelpers.ToRect(rect));
+    public OverrideData(string overrideName, string rect)
     {
         this.overrideName = overrideName;
-        this.imageArea = imageArea;
+        this.rect = rect;
     }
 }
 
-internal enum Override
+/*internal enum Override
 {
     HEAD_SKIN_TOP,
     HEAD_SKIN_BTM,
     HEAD_SKIN_TOP_BACK,
     HEAD_SKIN_BTM_BACK,
 
-}
+}*/
 
 /*
 internal class OverrideData
