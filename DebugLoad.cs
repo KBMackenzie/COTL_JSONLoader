@@ -19,7 +19,7 @@ internal static class DebugLoad
     public static void LoadSkins()
     {
         CustomSkinManager.AddPlayerSkin(new DebugPlayerSkin());
-        return;
+        return; // TODO: Remove return and what's above it
 
         PlayerSkinData data = new PlayerSkinData()
         {
