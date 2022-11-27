@@ -18,9 +18,7 @@ public class Plugin : BaseUnityPlugin
     private void Awake()
     {
         myLogger = Logger; // Make log source
-
-        // TODO
-
+        LoadFiles();
         Logger.LogInfo($"Loaded {PluginName} successfully!");
     }
 
@@ -40,7 +38,5 @@ public class Plugin : BaseUnityPlugin
 
         string[] followerSkin = files.Where(x => x.EndsWith("_follower.json")).ToArray();
         LoadSkins.LoadFollowerSkins(files);
-
-
     }
 }
