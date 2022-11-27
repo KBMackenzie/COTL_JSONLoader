@@ -3,9 +3,6 @@ using BepInEx;
 using BepInEx.Logging;
 using COTL_JSONLoader.Data.Skins;
 using System.IO;
-using System;
-using COTL_API.CustomSkins;
-using HarmonyLib;
 using BepInEx.Configuration;
 
 namespace COTL_JSONLoader;
@@ -62,6 +59,7 @@ public class Plugin : BaseUnityPlugin
 
     internal static void LoadDebug()
     {
-        DebugLoad.LoadSkins();
+        DebugLoad.MakePlayerSkin();
+        DebugLoad.MakeFollowerSkin();
     }
 }

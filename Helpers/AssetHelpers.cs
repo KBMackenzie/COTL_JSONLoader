@@ -21,8 +21,8 @@ internal static class AssetHelpers
 
         byte[] arr = File.ReadAllBytes(imagePath);
         Texture2D tex = new Texture2D(1, 1);
-        tex.filterMode = FilterMode.Point;
         ImageConversion.LoadImage(tex, arr);
+        tex.filterMode = FilterMode.Point;
         return tex;
     }
 
