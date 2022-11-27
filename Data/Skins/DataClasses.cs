@@ -2,9 +2,11 @@
 using System.Linq;
 using COTL_API.CustomSkins;
 using UnityEngine;
+#pragma warning disable CS0649
 
 namespace COTL_JSONLoader.Data.Skins;
 
+[System.Serializable]
 internal class PlayerSkinData
 {
     public string Name;
@@ -13,6 +15,7 @@ internal class PlayerSkinData
     public PlayerSkinDummy Create() => new(Name, ImagePath, Overrides);
 }
 
+[System.Serializable]
 internal class FollowerSkinData
 {
     public string Name;
@@ -44,6 +47,11 @@ internal class OverrideData
 {
     public string overrideName, imageArea;
     public CustomSkin.SkinOverride Create() => new(overrideName, AssetHelpers.ToRect(imageArea));
+    public OverrideData(string overrideName, string imageArea)
+    {
+        this.overrideName = overrideName;
+        this.imageArea = imageArea;
+    }
 }
 
 internal enum Override

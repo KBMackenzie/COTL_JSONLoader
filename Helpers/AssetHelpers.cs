@@ -10,7 +10,7 @@ namespace COTL_JSONLoader.Helpers;
 
 internal static class AssetHelpers
 {
-    private static string Find(string path) => Directory.GetFiles(Paths.PluginPath, path, SearchOption.AllDirectories).FirstOrDefault();
+    private static string Find(string filename) => Directory.GetFiles(Paths.PluginPath, filename, SearchOption.AllDirectories).FirstOrDefault();
 
     public static Texture2D Load(string imagePath)
     {
@@ -28,7 +28,7 @@ internal static class AssetHelpers
 
     public static Color32 HexToColor(string hex)
     {
-        Queue<char> chars = new Queue<char>(hex);
+        Queue<char> chars = new Queue<char>(hex.Trim());
         if (chars.Count == 0) return default;
         if (chars.Peek() == '#') chars.Dequeue();
 
@@ -57,7 +57,7 @@ internal static class AssetHelpers
 
     public static Rect ToRect(string rectString)
     {
-        string[] nums = rectString.Split(',');
+        string[] nums = rectString.Split(',').Select(x => x.Trim()).ToArray();
         if (nums.Length < 4)
         {
             Plugin.LogError($"Invalid rect: {rectString}");
