@@ -12,7 +12,7 @@ internal class PlayerSkinData
     public string Name;
     public string ImagePath;
     public OverrideData[] Overrides;
-    public PlayerSkinDummy Create() => new(Name, ImagePath, Overrides);
+    public PlayerSkinDummy CreateSkin() => new(Name, ImagePath, Overrides);
 }
 
 [System.Serializable]
@@ -23,33 +23,39 @@ internal class FollowerSkinData
     public OverrideData[] Overrides;
     public FollowerColor[] Colors;
 
-    public FollowerSkinDummy Create() => new(Name, ImagePath, Overrides, Colors);
+    public FollowerSkinDummy CreateSkin() => new(Name, ImagePath, Overrides, Colors);
 }
 
 public class FollowerColor
 {
     public HexColor[] colorOverrides;
-    public WorshipperData.SlotsAndColours Create() => new()
+    public WorshipperData.SlotsAndColours CreateColors() => new()
     {
-        SlotAndColours = colorOverrides.Select(x => x.Create()).ToList()
+        SlotAndColours = colorOverrides.Select(x => x.CreateColor()).ToList()
     };
 }
 
 public class HexColor
 {
-    public string overrideName;
+    public string name;
     public string hexcode;
     public Color GetColor() => AssetHelpers.HexToColor(hexcode);
-    public WorshipperData.SlotAndColor Create() => new(overrideName, GetColor());
+    public WorshipperData.SlotAndColor CreateColor() => new(name, GetColor());
+
+    public HexColor(string name, string hexcode)
+    {
+        this.name = name;
+        this.hexcode = hexcode;
+    }
 }
 
 internal class OverrideData
 {
-    public string overrideName, rect;
-    public CustomSkin.SkinOverride Create() => new(overrideName, AssetHelpers.ToRect(rect));
-    public OverrideData(string overrideName, string rect)
+    public string name, rect;
+    public CustomSkin.SkinOverride CreateOverride() => new(name, AssetHelpers.ToRect(rect));
+    public OverrideData(string name, string rect)
     {
-        this.overrideName = overrideName;
+        this.name = name;
         this.rect = rect;
     }
 }

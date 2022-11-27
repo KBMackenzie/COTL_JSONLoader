@@ -13,7 +13,7 @@ internal static class LoadSkins
             try
             {
                 PlayerSkinData skin = JsonConvert.DeserializeObject<PlayerSkinData>(File.ReadAllText(file));
-                CustomSkinManager.AddPlayerSkin(skin.Create());
+                CustomSkinManager.AddPlayerSkin(skin.CreateSkin());
                 Plugin.Log($"Loaded player skin from file {Path.GetFileName(file)}!");
             }
             catch (System.Exception)
@@ -32,7 +32,7 @@ internal static class LoadSkins
             try
             {
                 FollowerSkinData skin = JsonConvert.DeserializeObject<FollowerSkinData>(File.ReadAllText(file));
-                CustomSkinManager.AddFollowerSkin(skin.Create());
+                CustomSkinManager.AddFollowerSkin(skin.CreateSkin());
                 Plugin.Log($"Loaded follower skin from file {Path.GetFileName(file)}!");
             }
             catch (System.Exception)

@@ -13,7 +13,7 @@ internal class PlayerSkinDummy : CustomPlayerSkin
     public OverrideData[] overrideData;
     public override string Name => name;
     public override Texture2D Texture => AssetHelpers.Load(imagePath);
-    public override List<SkinOverride> Overrides => overrideData.Select(x => x.Create()).ToList();
+    public override List<SkinOverride> Overrides => overrideData.Select(x => x.CreateOverride()).ToList();
 
     public PlayerSkinDummy(string name, string imagePath, OverrideData[] overrideData)
     {
@@ -39,9 +39,8 @@ internal class FollowerSkinDummy : CustomFollowerSkin
     public FollowerColor[]? colors;
     public override string Name => name;
     public override Texture2D Texture => AssetHelpers.Load(imagePath);
-    public override List<SkinOverride> Overrides => overrideData.Select(x => x.Create()).ToList();
-    public override List<WorshipperData.SlotsAndColours> Colors => colors?.Select(x => x.Create())?.ToList()
-                                                                   ?? base.Colors;
+    public override List<SkinOverride> Overrides => overrideData.Select(x => x.CreateOverride()).ToList();
+    public override List<WorshipperData.SlotsAndColours> Colors => colors?.Select(x => x.CreateColors())?.ToList() ?? base.Colors;
 
     public FollowerSkinDummy(string name, string imagePath, OverrideData[] overrideData,
         FollowerColor[]? colors = null)
