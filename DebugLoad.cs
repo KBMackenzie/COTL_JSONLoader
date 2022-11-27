@@ -40,6 +40,8 @@ internal static class DebugLoad
         File.WriteAllText(DebugPath("debug_lamb.json"), json);
     }
 
+    // Temporary, adding this just because I kept getting errors with skins in the API.
+    // There's a bug with the API Skin Settings menu currently, I think. ><;
     public class DebugPlayerSkin : CustomPlayerSkin
     {
         public override string Name => "Debug Skin";
