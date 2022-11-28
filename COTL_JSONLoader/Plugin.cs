@@ -5,6 +5,7 @@ using BepInEx;
 namespace COTL_JSONLoader;
 
 [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+[BepInDependency("io.github.xhayper.COTL_API")]
 public class Plugin : BaseUnityPlugin
 {
     public static Plugin? Instance;
