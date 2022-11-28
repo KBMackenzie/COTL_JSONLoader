@@ -14,7 +14,11 @@ This mod’s only dependencies are BepInEx .
 3. Place the contents of **"COTL_JSONLoader.zip"** in its own folder within the BepInEx/plugins folder.
 
 ## How To Use
-Your JSON files, along with any images you use, should be placed inside of the BepInEx/plugins folder in order for this mod to find them.
+You can create JSON files to use with this mod with any text editor (even Notepad!). Aside from that, all you need to do is follow the guides and **name your JSON files properly**.  
+
+A JSON file for a custom Follower skin, for example, should have its name ending in `_follower.json`. A wrong name will make this mod ignore your file.
+
+Your JSON files, along with the images you use, should be placed inside of the BepInEx/plugins folder in order for this mod to find them.
 
 ## Creating Skins
 This mod supports creating custom skins through JSON.
