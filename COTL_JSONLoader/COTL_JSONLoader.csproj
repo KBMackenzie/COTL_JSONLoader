@@ -7,7 +7,7 @@
     <Import Project="../COTL_JSONLoader.Common.props" />
 
     <ItemGroup>
-        <PackageReference Include="CultOfTheLamb.GameLibs" Version="1.0.12-*" />
+        <PackageReference Include="CultOfTheLamb.GameLibs" Version="1.0.18-*" />
         <Reference Include="COTL_API" HintPath="../libs/COTL_API.dll" />
     </ItemGroup>
 </Project>
