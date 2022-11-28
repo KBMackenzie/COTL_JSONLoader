@@ -4,10 +4,14 @@ using BepInEx;
 
 namespace COTL_JSONLoader;
 
-[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+[BepInPlugin(PluginGuid, PluginName, PluginVersion)]
 [BepInDependency("io.github.xhayper.COTL_API")]
 public class Plugin : BaseUnityPlugin
 {
+    public const string PluginGuid = "kel.cotl.jsonloader";
+    public const string PluginName = "COTL_JSONLoader";
+    public const string PluginVersion = "1.0.0";
+
     public static Plugin? Instance;
 
     internal static ConfigEntry<bool>? Debug;
@@ -20,7 +24,7 @@ public class Plugin : BaseUnityPlugin
         if (Debug != null && Debug.Value) LoadDebug();
 
         LoadFiles();
-        Logger.LogInfo($"Loaded {MyPluginInfo.PLUGIN_NAME} successfully!");
+        Logger.LogInfo($"Loaded {PluginName} successfully!");
     }
 
     internal static void LogInfo(string x) => Instance?.Logger.LogInfo(x);

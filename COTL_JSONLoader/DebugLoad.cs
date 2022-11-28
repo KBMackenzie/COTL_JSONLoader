@@ -27,7 +27,7 @@ internal static class DebugLoad
             }
         };
 
-        string json = JsonConvert.SerializeObject(data);
+        string json = JsonConvert.SerializeObject(data, Formatting.Indented);
         File.WriteAllText(DebugPath("debug_lamb.json"), json);
     }
 
@@ -87,7 +87,7 @@ internal static class DebugLoad
             }
         };
 
-        string json = JsonConvert.SerializeObject(data);
+        string json = JsonConvert.SerializeObject(data, Formatting.Indented);
         File.WriteAllText(DebugPath("debug_follower.json"), json);
     }
     #endregion
