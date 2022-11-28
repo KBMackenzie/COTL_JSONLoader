@@ -13,8 +13,8 @@ internal static class AssetHelpers
         if (!Path.IsPathRooted(imagePath))
             imagePath = Find(imagePath);
 
-        var arr = File.ReadAllBytes(imagePath);
-        var tex = new Texture2D(1, 1);
+        byte[] arr = File.ReadAllBytes(imagePath);
+        Texture2D tex = new Texture2D(1, 1);
         ImageConversion.LoadImage(tex, arr);
         tex.filterMode = FilterMode.Point;
         return tex;
@@ -22,7 +22,7 @@ internal static class AssetHelpers
 
     internal static Color32 HexToColor(string hex)
     {
-        var chars = new Queue<char>(hex.Trim());
+        Queue<char> chars = new Queue<char>(hex.Trim());
         if (chars.Count == 0) return default;
         if (chars.Peek() == '#') chars.Dequeue();
 
@@ -34,7 +34,7 @@ internal static class AssetHelpers
 
         // I could have used a List<byte>, but this is a tiny bit faster.
         // (And I know exactly how many items I'll need, anyway.)
-        var rgb = new byte[3];
+        byte[] rgb = new byte[3];
 
         for (int i = 0; i < 3; i++)
         {
