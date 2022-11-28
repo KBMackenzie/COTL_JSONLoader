@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace COTL_JSONLoader.Data.Skins;
 
-public class ISkinData
+public class SkinData
 {
     [JsonProperty("name")]
     public string Name { get; set; }
@@ -21,13 +21,13 @@ public class ISkinData
 }
 
 [Serializable]
-public class PlayerSkinData : ISkinData
+public class PlayerSkinData : SkinData
 {
     public PlayerSkinDummy CreateSkin() => new(Name, ImagePath, Overrides);
 }
 
 [Serializable]
-public class FollowerSkinData : ISkinData
+public class FollowerSkinData : SkinData
 {
     [JsonProperty("colors")]
     public List<HexColor[]> Colors { get; set; }
