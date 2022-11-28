@@ -99,6 +99,16 @@ Your file should look like this:
         "name": "RIGHT_ARM_SKIN",
         "hex": "#FF0000"
       }
+    ],
+    [
+      {
+        "name": "LEFT_ARM_SKIN",
+        "hex": "#0000FF"
+      },
+      {
+        "name": "RIGHT_ARM_SKIN",
+        "hex": "#0000FF"
+      }
     ]
   ]
 }
