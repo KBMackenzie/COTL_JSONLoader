@@ -10,7 +10,7 @@ public class Plugin : BaseUnityPlugin
 {
     public const string PluginGuid = "kel.cotl.jsonloader";
     public const string PluginName = "COTL_JSONLoader";
-    public const string PluginVersion = "1.0.0";
+    public const string PluginVersion = "0.1.0";
 
     public static Plugin? Instance;
 
