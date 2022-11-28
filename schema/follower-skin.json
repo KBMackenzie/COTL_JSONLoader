@@ -1,0 +1,217 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Follower skin",
+  "description": "Custom follower skin data.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the skin.",
+      "type": "string"
+    },
+    "imagePath": {
+      "description": "The path to the skin's image file.",
+      "type": "string"
+    },
+    "overrides": {
+      "description": "List of skin overrides to use.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/override"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "colors": {
+      "description": "List of color overrides to use.",
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "$ref": "#/$defs/colorOverride"
+        },
+        "uniqueItems": true
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": ["name", "imagePath", "overrides", "colors"],
+  "$defs": {
+    "overrideName": {
+      "type": "string",
+      "enum": [
+        "LEFT_ARM_SKIN",
+        "LEFT_SLEEVE",
+        "WEAPON_HAND_SKIN",
+        "LEFT_LEG_SKIN",
+        "RIGHT_LEG_SKIN",
+        "BODY_SKIN",
+        "BODY_SKIN_BOWED",
+        "BODY_SKIN_UP",
+        "Body_Lvl3",
+        "BowlBtm",
+        "BowlFood",
+        "BowlFront",
+        "RIGHT_ARM_SKIN",
+        "RIGHT_SLEEVE",
+        "HEAD_SKIN_BTM",
+        "HEAD_SKIN_BTM_BACK",
+        "HEAD_SKIN_TOP",
+        "HEAD_SKIN_TOP_BACK",
+        "MARKINGS",
+        "Angry_Colouring",
+        "Embarrassed_Colouring",
+        "Possessed_Colouring",
+        "Sick_Colouring",
+        "MOUTH_BEDREST",
+        "MOUTH_CHEEKY",
+        "MOUTH_DEAD",
+        "MOUTH_DERP",
+        "MOUTH_ENLIGHTENED",
+        "MOUTH_GRIN",
+        "MOUTH_HAPPY",
+        "MOUTH_HAPPY_2",
+        "MOUTH_HUNGRY_1",
+        "MOUTH_HUNGRY_2",
+        "MOUTH_INDIFFERENT",
+        "MOUTH_INDIFFERENT_HUNGRY",
+        "MOUTH_INSANE",
+        "MOUTH_KISS",
+        "MOUTH_KISS_BIG",
+        "MOUTH_MUMBLE",
+        "MOUTH_MUMBLE_HUNGRY",
+        "MOUTH_RED",
+        "MOUTH_SACRIFICE",
+        "MOUTH_SAD",
+        "MOUTH_SADDER",
+        "MOUTH_SCARED",
+        "MOUTH_SICK",
+        "MOUTH_SLEEP_0",
+        "MOUTH_SLEEP_1",
+        "MOUTH_TALK_HAPPY",
+        "MOUTH_TALK_INDIFFERENT",
+        "MOUTH_TONGUE_1",
+        "MOUTH_TONGUE_2",
+        "MOUTH_TONGUE_3",
+        "MOUTH_TONGUE_4",
+        "MOUTH_WORRIED",
+        "MOUTH_ENLIGHTENED_2",
+        "RIGHT_EYE",
+        "RIGHT_EYE_ANGRY",
+        "RIGHT_EYE_ANGRY_UP",
+        "RIGHT_EYE_BLACK",
+        "RIGHT_EYE_BRAINWASHED",
+        "RIGHT_EYE_CLOSED",
+        "RIGHT_EYE_CRAZY",
+        "RIGHT_EYE_DEAD",
+        "RIGHT_EYE_DISSENTER",
+        "RIGHT_EYE_DISSENTER_ANGRY",
+        "RIGHT_EYE_ENLIGHTENED",
+        "RIGHT_EYE_HALF_CLOSED",
+        "RIGHT_EYE_HALF_CLOSED_ANGRY",
+        "RIGHT_EYE_INSANE",
+        "RIGHT_EYE_SACRIFICE_1",
+        "RIGHT_EYE_SACRIFICE_2",
+        "RIGHT_EYE_SHOCKED",
+        "RIGHT_EYE_SICK_2",
+        "RIGHT_EYE_SICK",
+        "RIGHT_EYE_SLEEPING",
+        "RIGHT_EYE_SLEEPING_SICK",
+        "RIGHT_EYE_SLEEPING_TIRED",
+        "RIGHT_EYE_SLEEPY",
+        "RIGHT_EYE_SMILE",
+        "RIGHT_EYE_SMILE_DOWN",
+        "RIGHT_EYE_SMILE_UP",
+        "RIGHT_EYE_SQUINT",
+        "RIGHT_EYE_STARS",
+        "RIGHT_EYE_UNCONVERTED",
+        "RIGHT_EYE_UP",
+        "RIGHT_EYE_VERY_ANGRY",
+        "RIGHT_EYE_WHITE",
+        "RIGHT_EYE_WORRIED",
+        "RIGHT_EYE_FIRE_1",
+        "RIGHT_EYE_FIRE_2",
+        "RIGHT_EYE_FIRE_3",
+        "RIGHT_EYE_FIRE_4",
+        "RIGHT_EYE_FIRE_5",
+        "RIGHT_EYE_FIRE_6",
+        "RIGHT_EYE_FIRE_7",
+        "LEFT_EYE",
+        "LEFT_EYE_ANGRY",
+        "LEFT_EYE_ANGRY_UP",
+        "LEFT_EYE_BLACK",
+        "LEFT_EYE_BRAINWASHED",
+        "LEFT_EYE_CLOSED",
+        "LEFT_EYE_CRAZY",
+        "LEFT_EYE_DEAD",
+        "LEFT_EYE_DISSENTER",
+        "LEFT_EYE_DISSENTER_ANGRY",
+        "LEFT_EYE_ENLIGHTENED",
+        "LEFT_EYE_HALF_CLOSED",
+        "LEFT_EYE_HALF_CLOSED_ANGRY",
+        "LEFT_EYE_INSANE",
+        "LEFT_EYE_SACRIFICE_1",
+        "LEFT_EYE_SACRIFICE_2",
+        "LEFT_EYE_SHOCKED",
+        "LEFT_EYE_SICK_2",
+        "LEFT_EYE_SICK",
+        "LEFT_EYE_SLEEPING",
+        "LEFT_EYE_SLEEPING_SICK",
+        "LEFT_EYE_SLEEPING_TIRED",
+        "LEFT_EYE_SLEEPY",
+        "LEFT_EYE_SMILE",
+        "LEFT_EYE_SMILE_DOWN",
+        "LEFT_EYE_SMILE_UP",
+        "LEFT_EYE_SQUINT",
+        "LEFT_EYE_STARS",
+        "LEFT_EYE_UNCONVERTED",
+        "LEFT_EYE_UP",
+        "LEFT_EYE_VERY_ANGRY",
+        "LEFT_EYE_WHITE",
+        "LEFT_EYE_WORRIED",
+        "LEFT_EYE_FIRE_1",
+        "LEFT_EYE_FIRE_2",
+        "LEFT_EYE_FIRE_3",
+        "LEFT_EYE_FIRE_4",
+        "LEFT_EYE_FIRE_5",
+        "LEFT_EYE_FIRE_6",
+        "LEFT_EYE_FIRE_7"
+      ]
+    },
+    "override": {
+      "description": "Override data.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The name of the override.",
+          "$ref": "#/$defs/overrideName"
+        },
+        "rect": {
+          "$ref": "#/$defs/rect"
+        }
+      },
+      "required": ["name", "rect"]
+    },
+    "colorOverride": {
+      "description": "Color override data.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The name of the override.",
+          "$ref": "#/$defs/overrideName"
+        },
+        "hex": {
+          "$ref": "#/$defs/colorHex"
+        }
+      },
+      "required": ["name", "hex"]
+    },
+    "rect": {
+      "type": "string",
+      "pattern": "^(\\d+), ?(\\d+), ?(\\d+), ?(\\d+)$"
+    },
+    "colorHex": {
+      "type": "string",
+      "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+    }
+  }
+}
