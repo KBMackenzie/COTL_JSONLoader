@@ -1,14 +1,14 @@
 ﻿using COTL_JSONLoader.Helpers;
-using System.Linq;
 using COTL_API.CustomSkins;
 using UnityEngine;
-using System.Collections.Generic;
+
 #pragma warning disable CS0649
+#pragma warning disable CS8618
 
 namespace COTL_JSONLoader.Data.Skins;
 
-[System.Serializable]
-internal class PlayerSkinData
+[Serializable]
+public class PlayerSkinData
 {
     public string name;
     public string imagePath;
@@ -16,8 +16,8 @@ internal class PlayerSkinData
     public PlayerSkinDummy CreateSkin() => new(name, imagePath, overrides);
 }
 
-[System.Serializable]
-internal class FollowerSkinData
+[Serializable]
+public class FollowerSkinData
 {
     public string name;
     public string imagePath;
@@ -27,15 +27,7 @@ internal class FollowerSkinData
     public FollowerSkinDummy CreateSkin() => new(name, imagePath, overrides, colors);
 }
 
-//public class FollowerColor
-//{
-//    public HexColor[] colorOverrides;
-//    public WorshipperData.SlotsAndColours CreateColors() => new()
-//    {
-//        SlotAndColours = colorOverrides.Select(x => x.CreateColor()).ToList()
-//    };
-//}
-
+[Serializable]
 public class HexColor
 {
     public string name;
@@ -50,7 +42,8 @@ public class HexColor
     }
 }
 
-internal class OverrideData
+[Serializable]
+public class OverrideData
 {
     public string name, rect;
     public CustomSkin.SkinOverride CreateOverride() => new(name, AssetHelpers.ToRect(rect));

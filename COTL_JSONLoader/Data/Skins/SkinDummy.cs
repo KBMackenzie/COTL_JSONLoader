@@ -1,14 +1,10 @@
-﻿using System.Linq;
+﻿using COTL_JSONLoader.Helpers;
 using COTL_API.CustomSkins;
-using COTL_JSONLoader.Helpers;
-using System.Collections.Generic;
 using UnityEngine;
-using System.Drawing;
-#nullable enable
 
 namespace COTL_JSONLoader.Data.Skins;
 
-internal class PlayerSkinDummy : CustomPlayerSkin
+public class PlayerSkinDummy : CustomPlayerSkin
 {
     public string name, imagePath;
     public OverrideData[] overrideData;
@@ -23,8 +19,6 @@ internal class PlayerSkinDummy : CustomPlayerSkin
         this.overrideData = overrideData;
     }
 
-
-
     /*List<SkinOverride> overrides = new List<SkinOverride>();
             foreach(OverrideData data in overrideData)
             {
@@ -33,7 +27,7 @@ internal class PlayerSkinDummy : CustomPlayerSkin
             return overrides;*/
 }
 
-internal class FollowerSkinDummy : CustomFollowerSkin
+public class FollowerSkinDummy : CustomFollowerSkin
 {
     public string name, imagePath;
     public OverrideData[] overrideData;

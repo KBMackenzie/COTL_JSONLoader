@@ -1,44 +1,33 @@
-using System.Linq;
-using BepInEx;
-using BepInEx.Logging;
 using COTL_JSONLoader.Data.Skins;
-using System.IO;
 using BepInEx.Configuration;
+using BepInEx;
 
 namespace COTL_JSONLoader;
 
-[BepInPlugin(PluginGuid, PluginName, PluginVer)]
+[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
 public class Plugin : BaseUnityPlugin
 {
-    public const string PluginGuid = "kel.cotl.jsonloader";
-    public const string PluginName = "COTL_JSONLoader";
-    public const string PluginVer = "1.0.0";
+    public static Plugin? Instance;
 
-    internal static ManualLogSource myLogger;
-    internal static PluginInfo myInfo;
-    internal static ConfigFile myConfig;
-
-    internal static ConfigEntry<bool> Debug;
+    internal static ConfigEntry<bool>? Debug;
 
     private void Awake()
     {
-        myLogger = Logger; // Make log source
-        myInfo = Info;
-        myConfig = Config;
+        Instance = this;
 
         LoadConfig();
-        if(Debug.Value) LoadDebug();
+        if (Debug != null && Debug.Value) LoadDebug();
 
         LoadFiles();
-        Logger.LogInfo($"Loaded {PluginName} successfully!");
+        Logger.LogInfo($"Loaded {MyPluginInfo.PLUGIN_NAME} successfully!");
     }
 
-    internal static void Log(string x) => myLogger.LogInfo(x);
-    internal static void LogError(string x) => myLogger.LogError(x);
+    internal static void Log(string x) => Instance?.Logger.LogInfo(x);
+    internal static void LogError(string x) => Instance?.Logger.LogError(x);
 
     internal static void LoadConfig()
     {
-        Debug = myConfig.Bind("General.Debug", "Debug", false,
+        Debug = Instance?.Config.Bind("General.Debug", "Debug", false,
                               "Enable creating and loading basic debug files.");
     }
 
