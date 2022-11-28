@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/KBMackenzie/COTL_JSONLoader/master/schema/lamb-skin.json",
+  "name": "My skin",
+  "imagePath": "C:/path/to/image.png",
+  "overrides": [
+    {
+      "name": "HeadBack",
+      "rect": "0, 0, 128, 128"
+    },
+    {
+      "name": "HeadBackDown",
+      "rect": "128, 0, 128, 128"
+    },
+    {
+      "name": "HeadBackDown_RITUAL",
+      "rect": "0, 128, 128, 128"
+    },
+    {
+      "name": "HeadBackDown_SERMON",
+      "rect": "128, 128, 128, 128"
+    },
+    {
+      "name": "HeadFront",
+      "rect": "256, 0, 128, 128"
+    },
+    {
+      "name": "HeadFrontDown",
+      "rect": "256, 128, 128, 128"
+    }
+  ]
+}
