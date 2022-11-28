@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <Guid>kel.cotl.jsonloader</Guid>
+        <Product>COTL_JSONLoader</Product>
+    </PropertyGroup>
+
+    <Import Project="../COTL_JSONLoader.Common.props" />
+
+    <ItemGroup>
+        <PackageReference Include="CultOfTheLamb.GameLibs" Version="1.0.18-*" />
+        <Reference Include="COTL_API" HintPath="../libs/COTL_API.dll" />
+    </ItemGroup>
+</Project>
