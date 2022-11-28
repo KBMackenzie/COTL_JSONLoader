@@ -52,7 +52,7 @@ internal static class AssetHelpers
     internal static Rect ToRect(string rectString)
     {
         string[] nums = rectString.Split(',').Select(x => x.Trim()).ToArray();
-        
+
         if (nums.Length < 4)
         {
             Plugin.LogError($"Invalid rect: {rectString}");

@@ -14,9 +14,9 @@ internal static class DebugLoad
     {
         PlayerSkinData data = new PlayerSkinData()
         {
-            name = "Debug",
-            imagePath = "debug_lamb_sheet.png",
-            overrides = new OverrideData[]
+            Name = "Debug",
+            ImagePath = "debug_lamb_sheet.png",
+            Overrides = new OverrideData[]
             {
                 new OverrideData("HeadBack", "0, 0, 128, 128"),
                 new OverrideData("HeadBackDown", "128, 0, 128, 128"),
@@ -35,16 +35,16 @@ internal static class DebugLoad
     {
         FollowerSkinData data = new FollowerSkinData()
         {
-            name = "Debug Follower",
-            imagePath = "debug_follower.png",
-            overrides = new OverrideData[]
+            Name = "Debug Follower",
+            ImagePath = "debug_follower.png",
+            Overrides = new OverrideData[]
             {
                 new OverrideData("HEAD_SKIN_TOP_BACK", "0, 127, 111, 127"),
                 new OverrideData("HEAD_SKIN_BTM_BACK", "0, 0, 111, 127"),
                 new OverrideData("HEAD_SKIN_TOP", "111, 127, 149, 127"),
                 new OverrideData("HEAD_SKIN_BTM", "111, 0, 149, 127")
             },
-            colors = new List<HexColor[]>
+            Colors = new List<HexColor[]>
             {
                 new HexColor[]
                 {

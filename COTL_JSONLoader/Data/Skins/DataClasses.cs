@@ -1,5 +1,6 @@
 ﻿using COTL_JSONLoader.Helpers;
 using COTL_API.CustomSkins;
+using Newtonsoft.Json;
 using UnityEngine;
 
 #pragma warning disable CS0649
@@ -7,49 +8,66 @@ using UnityEngine;
 
 namespace COTL_JSONLoader.Data.Skins;
 
-[Serializable]
-public class PlayerSkinData
+public class ISkinData
 {
-    public string name;
-    public string imagePath;
-    public OverrideData[] overrides;
-    public PlayerSkinDummy CreateSkin() => new(name, imagePath, overrides);
+    [JsonProperty("name")]
+    public string Name { get; set; }
+
+    [JsonProperty("imagePath")]
+    public string ImagePath { get; set; }
+
+    [JsonProperty("overrides")]
+    public OverrideData[] Overrides { get; set; }
 }
 
 [Serializable]
-public class FollowerSkinData
+public class PlayerSkinData : ISkinData
 {
-    public string name;
-    public string imagePath;
-    public OverrideData[] overrides;
-    public List<HexColor[]> colors;
+    public PlayerSkinDummy CreateSkin() => new(Name, ImagePath, Overrides);
+}
 
-    public FollowerSkinDummy CreateSkin() => new(name, imagePath, overrides, colors);
+[Serializable]
+public class FollowerSkinData : ISkinData
+{
+    [JsonProperty("colors")]
+    public List<HexColor[]> Colors { get; set; }
+
+    public FollowerSkinDummy CreateSkin() => new(Name, ImagePath, Overrides, Colors);
 }
 
 [Serializable]
 public class HexColor
 {
-    public string name;
-    public string hex;
-    public Color GetColor() => AssetHelpers.HexToColor(hex);
-    public WorshipperData.SlotAndColor CreateColor() => new(name, GetColor());
+    [JsonProperty("name")]
+    public string Name { get; set; }
+
+    [JsonProperty("hex")]
+    public string Hex { get; set; }
+
+    public Color GetColor() => AssetHelpers.HexToColor(Hex);
+    public WorshipperData.SlotAndColor CreateColor() => new(Name, GetColor());
 
     public HexColor(string name, string hex)
     {
-        this.name = name;
-        this.hex = hex;
+        this.Name = name;
+        this.Hex = hex;
     }
 }
 
 [Serializable]
 public class OverrideData
 {
-    public string name, rect;
-    public CustomSkin.SkinOverride CreateOverride() => new(name, AssetHelpers.ToRect(rect));
+    [JsonProperty("name")]
+    public string Name { get; set; }
+
+    [JsonProperty("rect")]
+    public string Rect { get; set; }
+
+    public CustomSkin.SkinOverride CreateOverride() => new(Name, AssetHelpers.ToRect(Rect));
+
     public OverrideData(string name, string rect)
     {
-        this.name = name;
-        this.rect = rect;
+        this.Name = name;
+        this.Rect = rect;
     }
 }
