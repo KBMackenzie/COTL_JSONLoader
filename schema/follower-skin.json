@@ -207,7 +207,7 @@
     },
     "rect": {
       "type": "string",
-      "pattern": "^(\\d+), ?(\\d+), ?(\\d+), ?(\\d+)$"
+      "pattern": "^ *(\\d+), *(\\d+), *(\\d+), *(\\d+) *$"
     },
     "colorHex": {
       "type": "string",
