@@ -4,22 +4,22 @@
   "imagePath": "C:/path/to/image.png",
   "overrides": [
     {
-      "name": "ARM_LEFT_SKIN",
+      "name": "LEFT_ARM_SKIN",
       "rect": "0, 0, 128, 128"
     },
     {
-      "name": "ARM_RIGHT_SKIN",
+      "name": "RIGHT_ARM_SKIN",
       "rect": "128, 128, 256, 256"
     }
   ],
   "colors": [
     [
       {
-        "name": "ARM_LEFT_SKIN",
+        "name": "LEFT_ARM_SKIN",
         "hex": "#FF0000"
       },
       {
-        "name": "ARM_RIGHT_SKIN",
+        "name": "RIGHT_ARM_SKIN",
         "hex": "#FF0000"
       }
     ]
