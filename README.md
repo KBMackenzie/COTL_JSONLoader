@@ -35,6 +35,7 @@ For **Player Skins** (i.e. Lamb skins), your JSON file's name should end in `_la
 Your file should look like this:
 ```json
 {
+  "$schema": "https://raw.githubusercontent.com/KBMackenzie/COTL_JSONLoader/master/schema/lamb-skin.json",
   "name": "Example Skin",
   "imagePath": "ExampleSkin.png",
   "overrides": [
@@ -81,6 +82,7 @@ For **Follower Skins**, your JSON file's name should end in `_follower.json`.
 Your file should look like this:
 ```json
 {
+  "$schema": "https://raw.githubusercontent.com/KBMackenzie/COTL_JSONLoader/master/schema/follower-skin.json",
   "name": "Example Follower",
   "imagePath": "ExampleFollower.png",
   "overrides": [
