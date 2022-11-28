@@ -22,7 +22,7 @@ public class Plugin : BaseUnityPlugin
         Logger.LogInfo($"Loaded {MyPluginInfo.PLUGIN_NAME} successfully!");
     }
 
-    internal static void Log(string x) => Instance?.Logger.LogInfo(x);
+    internal static void LogInfo(string x) => Instance?.Logger.LogInfo(x);
     internal static void LogError(string x) => Instance?.Logger.LogError(x);
 
     internal static void LoadConfig()

@@ -16,7 +16,7 @@ internal static class LoadSkins
                 if (skin != null)
                 {
                     CustomSkinManager.AddPlayerSkin(skin.CreateSkin());
-                    Plugin.Log($"Loaded player skin from file {Path.GetFileName(file)}!");
+                    Plugin.LogInfo($"Loaded player skin from file {Path.GetFileName(file)}!");
                 }
             }
             catch (System.Exception)
@@ -38,7 +38,7 @@ internal static class LoadSkins
                 if (skin != null)
                 {
                     CustomSkinManager.AddFollowerSkin(skin.CreateSkin());
-                    Plugin.Log($"Loaded follower skin from file {Path.GetFileName(file)}!");
+                    Plugin.LogInfo($"Loaded follower skin from file {Path.GetFileName(file)}!");
                 }
             }
             catch (System.Exception)
