@@ -36,13 +36,13 @@ public class Plugin : BaseUnityPlugin
         // The intent is to do only one search in the directory and then filter the JSON files by name.
         // I feel this would be faster than searching the BepInEx/plugins directory multiple times.
 
-        string[] files = Directory.GetFiles(Paths.PluginPath, "*.json", SearchOption.AllDirectories);
+        string[] files = Directory.GetFiles(Paths.PluginPath, "*.json", SearchOption.AllDirectories).Concat(Directory.GetFiles(Paths.PluginPath, "*.jsonc", SearchOption.AllDirectories)).ToArray();
         if (files.Length == 0) return;
 
-        string[] lambSkin = files.Where(x => x.EndsWith("_lamb.json")).ToArray();
+        string[] lambSkin = files.Where(x => x.EndsWith("_lamb.json") || x.EndsWith("_lamb.jsonc")).ToArray();
         LoadSkins.LoadPlayerSkins(lambSkin);
 
-        string[] followerSkin = files.Where(x => x.EndsWith("_follower.json")).ToArray();
+        string[] followerSkin = files.Where(x => x.EndsWith("_follower.json") || x.EndsWith("_lamb.jsonc")).ToArray();
         LoadSkins.LoadFollowerSkins(followerSkin);
     }
 
