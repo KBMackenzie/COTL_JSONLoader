@@ -10,4 +10,9 @@
         <PackageReference Include="CultOfTheLamb.GameLibs" Version="1.0.18-*" />
         <Reference Include="COTL_API" HintPath="../libs/COTL_API.dll" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Data\Structures\" />
+      <Folder Include="Data\Tasks\" />
+    </ItemGroup>
 </Project>

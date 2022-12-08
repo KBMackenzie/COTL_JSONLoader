@@ -8,7 +8,10 @@ internal static class AssetHelpers
 {
     private static string Find(string filename) => Directory.GetFiles(Paths.PluginPath, filename, SearchOption.AllDirectories).FirstOrDefault();
 
-    internal static Texture2D Load(string imagePath)
+    internal static Texture2D? TextureNullable(string? imagePath)
+        => imagePath == null ? null : Texture(imagePath);
+
+    internal static Texture2D Texture(string imagePath)
     {
         if (!Path.IsPathRooted(imagePath))
             imagePath = Find(imagePath);
@@ -19,6 +22,21 @@ internal static class AssetHelpers
         tex.filterMode = FilterMode.Point;
         return tex;
     }
+
+    public static Sprite Sprite(Texture2D tex) => UnityEngine.Sprite.Create(
+            tex,
+            new Rect(0, 0, tex.width, tex.height),
+            new Vector2(0.5f, 0.5f)
+        );
+
+    public static Sprite? SpriteNullable(Texture2D? tex)
+        => tex == null ? null : Sprite(tex);
+
+    public static Sprite Sprite(string filePath)
+        => Sprite(Texture(filePath));
+
+    public static Sprite? SpriteNullable(string? filePath)
+        => SpriteNullable(TextureNullable(filePath));
 
     internal static Color32 HexToColor(string hex)
     {

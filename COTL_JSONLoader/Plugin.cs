@@ -12,7 +12,7 @@ public class Plugin : BaseUnityPlugin
     public const string PluginName = "COTL_JSONLoader";
     public const string PluginVersion = "0.1.0";
 
-    public static Plugin? Instance;
+    internal static Plugin? Instance;
 
     internal static ConfigEntry<bool>? Debug;
 
