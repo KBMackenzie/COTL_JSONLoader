@@ -63,8 +63,13 @@ public class OverrideData
     [JsonProperty("rect")]
     public string Rect { get; set; }
 
-    public CustomSkin.SkinOverride CreateOverride() => new(Name, AssetHelpers.ToRect(Rect));
+    [JsonProperty("scale")] public string Scale { get; set; } = "1, 1";
+    
+    [JsonProperty("offset")]
+    public string Offset { get; set; } = "0, 0";
 
+    public CustomSkin.SkinOverride CreateOverride() => new(Name, AssetHelpers.ToRect(Rect), AssetHelpers.ToVector2(Scale), AssetHelpers.ToVector2(Offset));
+    
     public OverrideData(string name, string rect)
     {
         this.Name = name;

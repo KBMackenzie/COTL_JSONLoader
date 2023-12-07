@@ -270,7 +270,6 @@
     "override": {
       "description": "Override data.",
       "type": "object",
-      "required": ["name", "rect"],
       "properties": {
         "name": {
           "description": "The name of the override.",
@@ -278,12 +277,29 @@
         },
         "rect": {
           "$ref": "#/$defs/rect"
+        },
+        "scale": {
+          "$ref": "#/$defs/vector2",
+          "default": "1, 1"
+        },
+        "offset": {
+          "$ref": "#/$defs/vector2",
+          "default": "0, 0"
         }
-      }
+      },
+      "required": ["name", "rect"]
     },
     "rect": {
       "type": "string",
       "pattern": "^ *(\\d+), *(\\d+), *(\\d+), *(\\d+) *$"
+    },
+    "vector2": {
+      "type": "string",
+      "pattern": "^ *(\\d+), *(\\d+) *$"
+    },
+    "colorHex": {
+      "type": "string",
+      "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
     }
   }
 }

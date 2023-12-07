@@ -62,4 +62,18 @@ internal static class AssetHelpers
         int[] rect = nums.Select(x => Convert.ToInt32(x)).ToArray();
         return new(rect[0], rect[1], rect[2], rect[3]);
     }
+
+    public static Vector2 ToVector2(string vectorString)
+    {
+        string[] nums = vectorString.Split(',').Select(x => x.Trim()).ToArray();
+
+        if (nums.Length < 2)
+        {
+            Plugin.LogError($"Invalid vector: {vectorString}");
+            return default;
+        }
+
+        float[] vector = nums.Select(Convert.ToSingle).ToArray();
+        return new(vector[0], vector[1]);
+    }
 }

@@ -127,6 +127,22 @@ Your file should look like this:
 | overrides | The overrides for your skin. A full list of the available overrides for Follower skins can be found in the [COTL API's Skin documentation](https://cotl-api.vercel.app/skins).                                     |
 | colors    | The available colors for your Follower skin. You can add custom colors this way! All white pixels in your selected overrides will be replaced by the selected color. This mod supports using Hex codes for colors! |
 
+### Scale and Offset
+You can add a `scale` and `offset` field to any override in your skin. These fields are optional.  
+Note that offset uses game units, not pixels. Both require a string with two numbers separated by a comma.  
+Offset may be reversed from what you expect, so you may need to experiment with it. Skin parts can have different types, which may affect how offset works.
+
+Here's an example of an override with both fields:
+```json
+{
+  "name": "LEFT_ARM_SKIN",
+  "rect": "0, 0, 128, 128",
+  "scale": "1.5, 1.5",
+  "offset": "0.5, -0.5"
+}
+```
 
 ## Changelog
+- 0.1.1 -- Added support for scale and offset.
+
 - 0.1.0 -- Initial upload.
