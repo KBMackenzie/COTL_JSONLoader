@@ -25,7 +25,7 @@ This mod supports creating custom skins through JSON.
 
 This mod tries to keep the process of creating skins with JSON as close to how it's done through the COTL API as possible. Thus, following the tutorial for creating skins through the API will still be extremely helpful for you when creating a skin with this mod.
 
-[COTL API's Skin Tutorial](https://cotl-api.vercel.app/skins)
+[COTL API's Skin Tutorial](https://cotl-api.vercel.app/reference/skins/)
 
 There are two types of skins you can create: Player skins (for Lamb) and Follower skins.
 
